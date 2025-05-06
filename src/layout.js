@@ -2,12 +2,12 @@ import 'd3-transition';
 
 import { descending } from 'd3-array';
 import d3Cloud from 'd3-cloud';
-import { event } from 'd3-selection';
+import { pointer } from 'd3-selection';
 import clonedeep from 'lodash.clonedeep';
 import seedrandom from 'seedrandom';
 import tippy from 'tippy.js';
 
-import optimizedD3Cloud from './optimized-d3-cloud';
+import optimizedD3Cloud from './optimized-d3-cloud.js';
 import {
   choose,
   getFontScale,
@@ -15,7 +15,7 @@ import {
   getText,
   getTransform,
   rotate,
-} from './utils';
+} from './utils.js';
 
 export function render({ callbacks, options, random, selection, words }) {
   const {
@@ -46,12 +46,12 @@ export function render({ callbacks, options, random, selection, words }) {
     enter => {
       let text = enter
         .append('text')
-        .on('click', word => {
+        .on('click', (event, word) => {
           if (onWordClick) {
             onWordClick(word, event);
           }
         })
-        .on('mouseover', word => {
+        .on('mouseover', (event, word) => {
           if (
             enableTooltip &&
             (!tooltipInstance || tooltipInstance.isDestroyed)
@@ -72,7 +72,7 @@ export function render({ callbacks, options, random, selection, words }) {
             onWordMouseOver(word, event);
           }
         })
-        .on('mouseout', word => {
+        .on('mouseout', (event, word) => {
           if (tooltipInstance && !tooltipInstance.state.isVisible) {
             tooltipInstance.destroy();
           }

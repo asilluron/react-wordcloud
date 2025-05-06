@@ -1,16 +1,18 @@
-# ☁️ react-wordcloud
+# ☁️ react-wordcloud-plus
 
 Simple React + D3 wordcloud component with powerful features. Uses the [`d3-cloud`](https://github.com/jasondavies/d3-cloud) layout.
+
+This is a fork of [react-wordcloud](https://github.com/chrisrzhou/react-wordcloud) with React 18 and ESM support.
 
 ![image](/public/wordcloud.png)
 
 ## Install
 
 ```sh
-npm install react-wordcloud
+npm install react-wordcloud-plus
 ```
 
-Note that `react-wordcloud` requires `react^16.13.0` as a peer dependency.
+Note that `react-wordcloud-plus` requires `react^16.13.0 || ^17.0.0 || ^18.0.0` as a peer dependency.
 
 ## Use
 
@@ -18,8 +20,9 @@ Note that `react-wordcloud` requires `react^16.13.0` as a peer dependency.
 
 ```js
 import React from 'react';
-import ReactWordcloud from 'react-wordcloud';
+import ReactWordcloud from 'react-wordcloud-plus';
 
+// Import tooltip styles
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 
@@ -42,6 +45,7 @@ const words = [
   },
 ]
 
+// Simple functional component
 function SimpleWordcloud() {
   return <ReactWordcloud words={words} />
 }
@@ -121,6 +125,8 @@ Features supported:
 
 ## Contributing
 
-The code is written in `typescript`, linted with `xo`, and built with `microbundle`. Examples and documentations are built with `docz`.
+The code is written in JavaScript with TypeScript definitions, linted with `xo`, and built with `microbundle`. Examples and documentation are built with `docz`.
+
+For more information about the recent upgrade to React 18 and ESM, see [UPGRADE.md](./UPGRADE.md).
 
 Feel free to contribute by submitting a pull request.

@@ -1,6 +1,12 @@
 import { select } from 'd3-selection';
 import { useEffect, useRef, useState } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+// Modern browsers now have ResizeObserver built-in
+const getResizeObserver = () => {
+  if (typeof window !== 'undefined' && window.ResizeObserver) {
+    return window.ResizeObserver;
+  }
+  return require('resize-observer-polyfill').default;
+};
 
 export function useResponsiveSvgSelection(minSize, initialSize, svgAttributes) {
   const elementRef = useRef();
@@ -46,6 +52,7 @@ export function useResponsiveSvgSelection(minSize, initialSize, svgAttributes) {
     updateSize(width, height);
 
     // Update resize using a resize observer
+    const ResizeObserver = getResizeObserver();
     const resizeObserver = new ResizeObserver(entries => {
       if (!entries || entries.length === 0) {
         return;

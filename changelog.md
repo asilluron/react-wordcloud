@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.0](https://github.com/asilluron/react-wordcloud/releases/tag/v2.0.0) (2023-10-10)
+
+### Major Changes
+- Forked as react-wordcloud-plus
+- Updated to support React 18
+- Added ESM module support
+- Updated all dependencies to latest versions
+- Improved TypeScript definitions
+- See [UPGRADE.md](./UPGRADE.md) for detailed migration guide
+
 ## [1.2.7](https://github.com/chrisrzhou/react-wordcloud/compare/v1.2.7...v1.2.6) (2020-08-07)
 - Internal code cleanup (detypscriptify source code)
 - Update docs, readme and other configs.

@@ -1,5 +1,6 @@
 import { EnterElement, Selection as d3Selection } from 'd3-selection';
 import { Props as TippyProps } from 'tippy.js';
+import { ReactNode } from 'react';
 
 /**
  * Types
@@ -156,6 +157,10 @@ export interface Props {
    * An array of word.  A word is an object that must contain the 'text' and 'value' keys.
    */
   words: Word[];
+  /**
+   * Additional props to pass to the container div
+   */
+  [key: string]: any;
 }
 
 export interface Word {
