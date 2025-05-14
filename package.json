@@ -1,6 +1,6 @@
 {
   "name": "react-wordcloud-plus",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple React + D3 wordcloud component with powerful features. Fork of react-wordcloud with React 18 and ESM support.",
   "license": "MIT",
   "homepage": "https://github.com/asilluron/react-wordcloud",
@@ -20,27 +20,35 @@
     "esm",
     "react-wordcloud"
   ],
-  "type": "module",
+
   "scripts": {
-    "build": "microbundle --jsx React.createElement --format modern,esm,cjs",
+    "build": "node build.js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prepublishOnly": "npm run build",
     "build:docs": "docz build",
     "clean": "rm -rf dist",
     "clean:docs": "rm -rf .docz",
     "docs": "docz dev",
-    "lint": "xo --fix; tsc",
-    "prepare": "npm run clean; npm run build"
+    "lint": "xo --fix; tsc --noEmit",
+    "prepare": "npm run clean && npm run build"
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.module.js",
+  "module": "dist/index.mjs",
   "exports": {
-    "import": "./dist/index.modern.js",
+    "import": "./dist/index.mjs",
     "require": "./dist/index.cjs"
   },
   "source": "index.js",
-  "typings": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "types/index.d.ts"
+    "types",
+    "src",
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "UPGRADE.md",
+    "FORK.md"
   ],
   "dependencies": {
     "d3-array": "^3.2.4",
@@ -66,10 +74,10 @@
     "@types/lodash.debounce": "^4.0.9",
     "@types/seedrandom": "^3.0.8",
     "docz": "^2.4.0",
+    "esbuild": "^0.19.12",
     "eslint-config-xo-react": "^0.27.0",
     "eslint-config-xo-typescript": "^1.0.1",
     "husky": "^8.0.3",
-    "microbundle": "^0.15.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2",

@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/asilluron/react-wordcloud/releases/tag/v2.0.1) (2023-05-13)
+
+### Bug Fixes
+- Fixed TypeScript type exports for client applications
+- Improved TypeScript definitions compatibility with React 18
+- Updated build process to properly include TypeScript definitions
+- Enhanced documentation for TypeScript usage
+
 ## [2.0.0](https://github.com/asilluron/react-wordcloud/releases/tag/v2.0.0) (2023-10-10)
 
 ### Major Changes
