@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/asilluron/react-wordcloud/releases/tag/v2.0.2) (2023-05-13)
+
+### Bug Fixes
+- Fixed TypeScript module resolution with package.json exports
+- Added named export for ReactWordcloud component
+- Updated exports field in package.json to properly include type definitions
+
 ## [2.0.1](https://github.com/asilluron/react-wordcloud/releases/tag/v2.0.1) (2023-05-13)
 
 ### Bug Fixes

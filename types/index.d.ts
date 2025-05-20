@@ -1,6 +1,6 @@
 import { EnterElement, Selection as d3Selection } from 'd3-selection';
 import { Props as TippyProps } from 'tippy.js';
-import { ReactNode } from 'react';
+import * as React from 'react';
 
 /**
  * Types
@@ -176,4 +176,5 @@ export const defaultCallbacks: CallbacksProp;
 
 export const defaultOptions: OptionsProp;
 
-export default function ReactWordcloud(props: Props): JSX.Element;
+export default function ReactWordcloud(props: Props): React.ReactElement;
+export { ReactWordcloud };

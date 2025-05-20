@@ -1,6 +1,6 @@
 {
   "name": "react-wordcloud-plus",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple React + D3 wordcloud component with powerful features. Fork of react-wordcloud with React 18 and ESM support.",
   "license": "MIT",
   "homepage": "https://github.com/asilluron/react-wordcloud",
@@ -35,8 +35,15 @@
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    },
+    "require": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
+    },
+    "types": "./dist/index.d.ts"
   },
   "source": "index.js",
   "types": "dist/index.d.ts",

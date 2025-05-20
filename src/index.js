@@ -26,7 +26,7 @@ export const defaultOptions = {
   transitionDuration: 600,
 };
 
-function ReactWordCloud({
+export function ReactWordcloud({
   callbacks = defaultCallbacks,
   maxWords = 100,
   minSize = [300, 300],
@@ -62,4 +62,4 @@ function ReactWordCloud({
   return <div ref={ref} style={{ height: '100%', width: '100%' }} {...rest} />;
 }
 
-export default ReactWordCloud;
+export default ReactWordcloud;
